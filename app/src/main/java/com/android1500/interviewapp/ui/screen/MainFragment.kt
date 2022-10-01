@@ -14,7 +14,6 @@ import com.android1500.interviewapp.adapter.PostAdapter
 import com.android1500.interviewapp.databinding.FragmentMainBinding
 import com.android1500.interviewapp.model.PostData
 import com.android1500.interviewapp.ui.base.BaseFragment
-import com.android1500.interviewapp.utils.ext.isNetworkConnected
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -27,7 +26,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupRecycle()
+        setupRecycleView()
         binding.permissionAccesbility.setOnClickListener {
             startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
 
@@ -36,8 +35,8 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
 
     }
 
-    private fun setupRecycle() = with(binding){
-        if (requireContext().isNetworkConnected()){
+    private fun setupRecycleView() = with(binding){
+
             postAdapter = PostAdapter()
             postList.layoutManager = LinearLayoutManager(requireContext())
             postList.adapter = postAdapter
@@ -49,9 +48,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
                 val action =  MainFragmentDirections.actionMainFragmentToPostFragment(PostData(it.userId,it.id,it.title,it.body))
                 findNavController().navigate(action)
             }
-        }else {
-            binding.error.visibility = View.VISIBLE
-        }
+
 
     }
 
