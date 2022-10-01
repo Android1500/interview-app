@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.provider.Settings
 import android.view.View
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,6 +15,7 @@ import com.android1500.interviewapp.adapter.PostAdapter
 import com.android1500.interviewapp.databinding.FragmentMainBinding
 import com.android1500.interviewapp.model.PostData
 import com.android1500.interviewapp.ui.base.BaseFragment
+import com.android1500.interviewapp.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -27,23 +29,18 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecycleView()
-        binding.permissionAccesbility.setOnClickListener {
-            startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
-
-        }
-
-
     }
 
-    private fun setupRecycleView() = with(binding){
 
+
+    private fun setupRecycleView() = with(binding){
             postAdapter = PostAdapter()
             postList.layoutManager = LinearLayoutManager(requireContext())
             postList.adapter = postAdapter
             viewModel.getAllPost.observe(requireActivity()){ result ->
                 postAdapter.submitList(result.data)
-            }
 
+            }
             postAdapter.onItemClick = {
                 val action =  MainFragmentDirections.actionMainFragmentToPostFragment(PostData(it.userId,it.id,it.title,it.body))
                 findNavController().navigate(action)
@@ -51,11 +48,6 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
 
 
     }
-
-
-
-
-
 
 
 

@@ -15,6 +15,4 @@ class PostFragment : BaseFragment<FragmentPostBinding> (FragmentPostBinding::inf
         super.onViewCreated(view, savedInstanceState)
         binding.post.text = args.postData.body
     }
-
-
 }

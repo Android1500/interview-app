@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.screen.MainFragment">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -11,14 +12,56 @@
         android:layout_height="match_parent"
         tools:listitem="@layout/item_post"/>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/permissionAccesbility"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/loading_data"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/ic_outline_accessibility_24"
-        android:layout_gravity="bottom|right"
-        android:layout_marginBottom="16dp"/>
+        android:gravity="center"
+        android:layout_marginTop="120dp"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        tools:visibility="visible">
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            app:trackCornerRadius="8dp"
+            app:trackThickness="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_16"
+            android:text="@string/loading"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium.InterviewApp"
+            android:textColor="?android:textColorPrimary" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/app_picker_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="120dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_16"
+            android:text="text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium.InterviewApp"
+            android:textColor="?android:textColorPrimary" />
+
+    </LinearLayout>
+
+
 
 
 

@@ -22,7 +22,7 @@ class PostRepository @Inject constructor(
            dao.getAllPosts()
       },
       fetch = {
-
+            delay(2000)
             apiService.getPosts()
       },
       saveFetchResult = {

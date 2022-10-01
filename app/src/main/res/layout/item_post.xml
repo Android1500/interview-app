@@ -1,33 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    app:cardBackgroundColor="@color/white"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="4dp"
     app:cardMaxElevation="10dp"
-    app:cardPreventCornerOverlap="true"
     app:cardUseCompatPadding="true">
 
   <RelativeLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent">
 
-
-    <!-- Text View to display Course Name -->
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:paddingStart="16dp"
-        android:text="Click"
-        style="@style/TextAppearance.AppCompat.Title"
-        android:textStyle="bold" />
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/click_me"
+        style="@style/TextAppearance.AppCompat.Large.InterviewApp" />
 
 
   </RelativeLayout>
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

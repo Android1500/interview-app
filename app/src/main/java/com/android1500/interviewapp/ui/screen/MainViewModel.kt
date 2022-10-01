@@ -13,4 +13,5 @@ class MainViewModel @Inject constructor(
     val getAllPost = postRepository.getAllPosts().asLiveData()
 
 
+
 }
