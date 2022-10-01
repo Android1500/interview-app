@@ -2,10 +2,13 @@
 
 A demo app for fetch data from api and store cache to room db.
 
-## Component use
+### Component use
 
 -> Hilt
+
 -> RoomDB
+
 -> Retrofit
+
 -> MVVM
--> Flow
+
