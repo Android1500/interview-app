@@ -1,3 +1,11 @@
 # interview-app
 
-A demo app for fetch data from api by using retrofit and mvvm architectur ,cache api response into roomdb.
+A demo app for fetch data from api and store cache to room db.
+
+## Component use
+
+-> Hilt
+-> RoomDB
+-> Retrofit
+-> MVVM
+-> Flow
