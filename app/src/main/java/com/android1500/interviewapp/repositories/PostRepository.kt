@@ -1,9 +1,8 @@
-package com.android1500.interviewapp.repository
+package com.android1500.interviewapp.repositories
 
 import androidx.room.withTransaction
 import com.android1500.interviewapp.api.ApiService
 import com.android1500.interviewapp.room.AppDatabase
-import com.android1500.interviewapp.room.PostDao
 import com.android1500.interviewapp.utils.networkBoundResource
 import kotlinx.coroutines.delay
 import javax.inject.Inject

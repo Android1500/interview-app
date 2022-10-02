@@ -40,7 +40,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/app_picker_empty"
+        android:id="@+id/empty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -55,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/padding_16"
-            android:text="text"
+            android:text="No internet connection"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium.InterviewApp"
             android:textColor="?android:textColorPrimary" />
 

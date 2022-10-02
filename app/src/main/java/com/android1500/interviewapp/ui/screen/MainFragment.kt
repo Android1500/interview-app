@@ -23,7 +23,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::inflate) {
 
     private val viewModel by viewModels<MainViewModel>()
-    private lateinit var postAdapter: PostAdapter
+    private val postAdapter: PostAdapter = PostAdapter()
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,11 +34,26 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
 
 
     private fun setupRecycleView() = with(binding){
-            postAdapter = PostAdapter()
             postList.layoutManager = LinearLayoutManager(requireContext())
             postList.adapter = postAdapter
             viewModel.getAllPost.observe(requireActivity()){ result ->
                 postAdapter.submitList(result.data)
+                when(result){
+                    is Resource.Loading  -> {
+                        if (!result.data.isNullOrEmpty()){
+                            setLoadingState(loading = true, isEmpty = false)
+                        }
+                    }
+                    is Resource.Success -> {
+                        setLoadingState(loading = false,false)
+
+                    }
+                    is Resource.Error -> {
+                        setLoadingState(loading = false,false)
+                    }
+
+                }
+
 
             }
             postAdapter.onItemClick = {
@@ -47,6 +62,12 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
             }
 
 
+    }
+
+    private fun setLoadingState(loading: Boolean, isEmpty: Boolean) {
+        binding.postList.isVisible = !loading && !isEmpty
+        binding.loadingData.isVisible = loading && !isEmpty
+        binding.empty.isVisible = isEmpty
     }
 
 

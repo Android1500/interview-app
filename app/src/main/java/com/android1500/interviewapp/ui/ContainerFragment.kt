@@ -1,4 +1,4 @@
-package com.android1500.interviewapp
+package com.android1500.interviewapp.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
