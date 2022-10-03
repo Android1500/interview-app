@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/mainFragment"
+        android:label="@string/app_name"
         android:name="com.android1500.interviewapp.ui.screen.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_postFragment"
             app:destination="@id/postFragment" />
@@ -17,8 +17,8 @@
     <fragment
         android:id="@+id/postFragment"
         android:name="com.android1500.interviewapp.ui.screen.PostFragment"
-        android:label="fragment_post"
-        tools:layout="@layout/fragment_post" >
+        android:label="Post"
+        tools:layout="@layout/fragment_post">
         <argument
             android:name="postData"
             app:argType="com.android1500.interviewapp.model.PostData" />

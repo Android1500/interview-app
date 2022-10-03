@@ -4,4 +4,5 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="toolbar_expanded_title_margin">16dp</dimen>
     <dimen name="padding_16">16dp</dimen>
+    <dimen name="shared_axis_x_slide_distance">96dp</dimen>
 </resources>
