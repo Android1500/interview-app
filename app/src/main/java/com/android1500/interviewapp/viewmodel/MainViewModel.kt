@@ -1,4 +1,4 @@
-package com.android1500.interviewapp.ui.screen
+package com.android1500.interviewapp.viewmodel
 
 import androidx.lifecycle.*
 import com.android1500.interviewapp.repositories.PostRepository

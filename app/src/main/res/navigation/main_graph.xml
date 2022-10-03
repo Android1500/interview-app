@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.android1500.interviewapp.AboutFragment"
+        android:name="com.android1500.interviewapp.ui.screen.AboutFragment"
         android:label="About"
         tools:layout="@layout/fragment_about" />
 </navigation>

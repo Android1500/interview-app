@@ -16,6 +16,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.*
 import com.android1500.interviewapp.databinding.ActivityMainBinding
+import com.android1500.interviewapp.ui.screen.AboutFragment
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -41,15 +42,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
         setupAppbarConfiguration()
+        setupFloatActionButton()
 
-
-
-        binding.permissionAccessibility.setOnClickListener {
-            startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
-        }
 
 
     }
+
+    private fun setupFloatActionButton(){
+        binding.permissionAccessibility.setOnClickListener {
+            startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
+            navController.navigate(R.id.action_mainFragment_to_aboutFragment)
+        }
+
+    }
+
     private fun setupAppbarConfiguration(){
         appBarConfiguration = AppBarConfiguration(navController.graph)
         binding.collapsingToolbar.setupWithNavController(binding.toolbar,navController, appBarConfiguration)
@@ -61,15 +67,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.menu_about -> true
-            else -> super.onOptionsItemSelected(item)
+        when(item.itemId){
+            R.id.menu_about -> {
+                navController.navigate(R.id.action_mainFragment_to_aboutFragment)
+            }
+            else -> super.onOptionsItemSelected(item) || item.onNavDestinationSelected(navController)
         }
+       return true
     }
 
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.fragmentContainerView)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
     }

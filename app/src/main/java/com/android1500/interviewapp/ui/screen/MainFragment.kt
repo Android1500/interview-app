@@ -1,12 +1,7 @@
 package com.android1500.interviewapp.ui.screen
 
-import android.content.Context
-import android.content.Intent
-import android.net.NetworkCapabilities
 import android.os.Bundle
-import android.provider.Settings
 import android.view.View
-import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -16,6 +11,7 @@ import com.android1500.interviewapp.databinding.FragmentMainBinding
 import com.android1500.interviewapp.model.PostData
 import com.android1500.interviewapp.ui.base.BaseFragment
 import com.android1500.interviewapp.utils.Resource
+import com.android1500.interviewapp.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
