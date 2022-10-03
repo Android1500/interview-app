@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_mainFragment_to_postFragment"
             app:destination="@id/postFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
     </fragment>
     <fragment
         android:id="@+id/postFragment"
@@ -23,4 +26,9 @@
             android:name="postData"
             app:argType="com.android1500.interviewapp.model.PostData" />
     </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.android1500.interviewapp.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_about" />
 </navigation>

@@ -28,8 +28,7 @@
             app:scrimAnimationDuration="250"
             app:scrimVisibleHeightTrigger="174dp"
             app:statusBarScrim="@android:color/transparent"
-            app:titleCollapseMode="fade"
-            tools:title="@string/app_name">
+            app:titleCollapseMode="fade">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/toolbar"
