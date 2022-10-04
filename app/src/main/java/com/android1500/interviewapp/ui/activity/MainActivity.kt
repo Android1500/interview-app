@@ -1,4 +1,4 @@
-package com.android1500.interviewapp
+package com.android1500.interviewapp.ui.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,18 +6,13 @@ import android.os.Bundle
 import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
-import androidx.appcompat.widget.Toolbar
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.WindowCompat
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.*
+import com.android1500.interviewapp.R
 import com.android1500.interviewapp.databinding.ActivityMainBinding
-import com.android1500.interviewapp.ui.screen.AboutFragment
-import com.google.android.material.appbar.CollapsingToolbarLayout
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -43,9 +38,6 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         setupAppbarConfiguration()
         setupFloatActionButton()
-
-
-
     }
 
     private fun setupFloatActionButton(){
@@ -59,6 +51,12 @@ class MainActivity : AppCompatActivity() {
     private fun setupAppbarConfiguration(){
         appBarConfiguration = AppBarConfiguration(navController.graph)
         binding.collapsingToolbar.setupWithNavController(binding.toolbar,navController, appBarConfiguration)
+        navController.addOnDestinationChangedListener {  _, destination, _ ->
+            if (destination.id == R.id.aboutFragment){
+                binding.toolbar.menu.findItem(R.id.menu_about).isVisible =  false
+            }
+
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

@@ -1,10 +1,7 @@
-package com.android1500.interviewapp.accessbility
+package com.android1500.interviewapp.accessibility
 
 import android.accessibilityservice.AccessibilityService
 import android.accessibilityservice.AccessibilityServiceInfo
-import android.app.Service
-import android.content.Intent
-import android.os.IBinder
 import android.util.Log
 import android.view.accessibility.AccessibilityEvent
 import android.widget.Toast
@@ -17,7 +14,6 @@ class MyService : AccessibilityService() {
 
     override fun onInterrupt() {
         Log.d(TAG,"Interrupt : something went wrong")
-
     }
 
 

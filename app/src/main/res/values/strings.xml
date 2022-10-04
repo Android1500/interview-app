@@ -10,4 +10,5 @@
     <string name="accessibility_permission">Accesbility Permission</string>
     <string name="about_app">A demo app for fetch data from api and store cache to room db. This app made for given task in interview.</string>
     <string name="category_more">test</string>
+    <string name="about">About</string>
 </resources>

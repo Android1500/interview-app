@@ -1,9 +1,9 @@
 package com.android1500.interviewapp.ui.screen
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android1500.interviewapp.BuildConfig
 import com.android1500.interviewapp.R
@@ -23,15 +23,21 @@ class AboutFragment : BaseFragment<FragmentAboutBinding>(FragmentAboutBinding::i
                 title = "README"
                 summary = "Check the Github repository and the README"
                 iconRes = R.drawable.ic_outline_readme_24
-
+                onClick {
+                    openLink("https://github.com/Android1500/interview-app/blob/master/README.md")
+                    return@onClick true
+                }
 
             }
-            pref("developer"){
+            pref("developer") {
                 title = "Developer"
                 summary = "Android1500"
                 iconRes = R.drawable.ic_dev
+                onClick{
+                    openLink("https://github.com/Android1500")
+                    return@onClick true
+                }
             }
-
 
             pref("version") {
                 title = "Version"
@@ -45,6 +51,11 @@ class AboutFragment : BaseFragment<FragmentAboutBinding>(FragmentAboutBinding::i
         val preferencesAdapter = PreferencesAdapter(screen)
         binding.aboutRcv.layoutManager = LinearLayoutManager(requireContext())
         binding.aboutRcv.adapter = preferencesAdapter
+    }
+
+    private fun openLink(url : String){
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        startActivity(intent)
     }
 
 

@@ -9,6 +9,7 @@ import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.android1500.interviewapp.R
+import com.android1500.interviewapp.utils.TransitionUtils
 import com.google.android.material.transition.FadeThroughProvider
 import com.google.android.material.transition.MaterialSharedAxis
 import com.google.android.material.transition.SlideDistanceProvider
@@ -23,10 +24,10 @@ abstract class BaseFragment<T : ViewBinding>(private val inflate: (LayoutInflate
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        exitTransition = getMaterialSharedAxis(requireContext(), true)
-        enterTransition = getMaterialSharedAxis(requireContext(), true)
-        returnTransition = getMaterialSharedAxis(requireContext(), false)
-        reenterTransition = getMaterialSharedAxis(requireContext(), false)
+        exitTransition = TransitionUtils.getMaterialSharedAxis(requireContext(), true)
+        enterTransition = TransitionUtils.getMaterialSharedAxis(requireContext(), true)
+        returnTransition = TransitionUtils.getMaterialSharedAxis(requireContext(), false)
+        reenterTransition = TransitionUtils.getMaterialSharedAxis(requireContext(), false)
     }
 
 
@@ -46,13 +47,5 @@ abstract class BaseFragment<T : ViewBinding>(private val inflate: (LayoutInflate
     }
 
 
-    private fun getMaterialSharedAxis(context: Context, forward: Boolean): MaterialSharedAxis {
-        return MaterialSharedAxis(MaterialSharedAxis.X, forward).apply {
-            (primaryAnimatorProvider as SlideDistanceProvider).slideDistance =
-                context.resources.getDimension(R.dimen.shared_axis_x_slide_distance).roundToInt()
-            duration = 450L
-            (secondaryAnimatorProvider as FadeThroughProvider).progressThreshold = 0.22f
-            interpolator = AnimationUtils.loadInterpolator(context, R.anim.fast_out_extra_slow_in)
-        }
-    }
+
 }
