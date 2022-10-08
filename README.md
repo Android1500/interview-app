@@ -4,7 +4,7 @@
 
 ## Components used in the app.
 - [Kotlin](https://kotlinlang.org/) - As a programming language.
-- [Material You](https://developer.android.com/jetpack/compose) - To make UI.
+- [Material You](https://material.io/blog/start-building-with-material-you) - To make UI.
 - [Flow](https://kotlinlang.org/docs/flow.html) - A suspending function asynchronously returns a single value, but how can we return multiple asynchronously computed values? This is where Kotlin Flows come in.
 - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - To manage the UI-related data
 - [Retrofit](https://square.github.io/retrofit/) - For making network calls.
