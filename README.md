@@ -12,7 +12,7 @@
 - [Room database](https://developer.android.com/topic/libraries/architecture/room) - To cache the response for offline access.
 
 ## Description
-This is a Interview application which made by me in interview task what it do? that will give you the result from https://jsonplaceholder.typicode.com/posts and also save data in the cache using RoomDb so that we can access it offline.
+This is a Interview application which made by me in interview task what it do? that will give you the result from api and also save data in the cache using RoomDb so that we can access it offline.
 
 ## Given Task 
 Url : https://jsonplaceholder.typicode.com/posts
