@@ -1,4 +1,4 @@
-# Clean-MVVM-DictionaryApp
+# Clean-MVVM-App
 
 > An Android application built using Clean + MVVM architecture.
 
