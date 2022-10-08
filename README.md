@@ -2,6 +2,8 @@
 
 > An Android application built using Clean + MVVM architecture.
 
+![](https://github.com/Android1500/interview-app/blob/master/banner-interview-app.png)
+
 ## Components used in the app.
 - [Kotlin](https://kotlinlang.org/) - As a programming language.
 - [Material You](https://material.io/blog/start-building-with-material-you) - To make UI.
