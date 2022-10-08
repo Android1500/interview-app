@@ -14,6 +14,19 @@
 ## Description
 This is a Interview application which made by me in interview task what it do? that will give you the result from https://jsonplaceholder.typicode.com/posts and also save data in the cache using RoomDb so that we can access it offline.
 
+## Task 
+Url : https://jsonplaceholder.typicode.com/posts
+
+1. Use Single Activity and multiple Fragment.
+2. Fetch post from provided url [use retrofit] and store them inside your local database.[use room db.]
+3. Display your local database posts in a list using RecyclerView.
+4. In Your recyclerView layout display only title of the post.
+5. Clicking on a post It should display whole post contents in a separate fragment.
+6. Now Create a accessibility service and display a toast "WhatsApp Launched." , when user open whatsApp.
+6a. Optionally You can add a button somewhere in your Activity Layout for accessibility permission.
+
+
+
 ## Architecture
 [Clean MVVM Architecture](https://proandroiddev.com/android-clean-architecture-kotlin-flow-hilt-simplest-way-415d7e0f41b)
 
